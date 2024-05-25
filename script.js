@@ -1,6 +1,6 @@
 const uploadBox = document.querySelector(".upload-box"),
-fileInput = uploadBox.querySelector("input[type='file']"),
-previewImg = uploadBox.querySelector("img");
+previewImg = uploadBox.querySelector("#preview-img"),
+fileInput = uploadBox.querySelector("#file-input");
 
 const loadFile = (e) => {
     const file = e.target.files[0]; // getting first user selected file
