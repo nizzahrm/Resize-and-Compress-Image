@@ -26,10 +26,13 @@ widthInput.addEventListener("keyup", ()=>{
     //getting height according to the ratio checkbos status
     const height = ratioInput.checked ? widthInput.value / ogImageRatio : heightInput.value;
     heightInput.value = Math.floor(height);
-
 });
 
-
+heightInput.addEventListener("keyup", ()=>{
+    //getting width according to the ratio checkbos status
+    const width = ratioInput.checked ? heightInput.value * ogImageRatio : widthInput.value;
+    widthInput.value = Math.floor(width);
+});
 
 
 
