@@ -3,7 +3,9 @@ previewImg = uploadBox.querySelector("#preview-img"),
 fileInput = uploadBox.querySelector("#file-input"),
 widthInput = document.querySelector(".width input"),
 heightInput = document.querySelector(".height input"),
-ratioInput = document.querySelector(".ratio input");
+ratioInput = document.querySelector(".ratio input"),
+qualityInput = document.querySelector(".quality input"),
+downloadBtn = document.querySelector(".download-btn");
 
 let ogImageRatio;
 
@@ -34,7 +36,28 @@ heightInput.addEventListener("keyup", ()=>{
     widthInput.value = Math.floor(width);
 });
 
+const resizeAndDownload = () => {
+    const canvas = document.createElement("canvas");
+    const a = document.createElement("a");
+    const ctx = canvas.getContext("2d");
 
+    //if quality checkbox is checked, pass 0.7 to imgQuality else pass 1.0
+    //1.0 is 100% quality where 0.7 is 70% of total. 
+    const imgQuality = qualityInput.checked ? 0.7 : 1.0;
 
+    //setting canvas height & width according to the input values
+    canvas.width = widthInput.value;
+    canvas.height = heightInput.value;
+
+    //drawing user selected image onto the canvas
+    ctx.drawImage(previewImg, 0, 0, canvas.width, canvas.height);
+    
+    //passing canvas data url as href value of <a> element
+    a.href = canvas.toDataURL("image/jpeg", imgQuality);
+    a.download = new Date().getTime(); //passing current time as download value
+    a.click(); //clicking <a> element so the file download
+}
+
+downloadBtn.addEventListener("click",resizeAndDownload);
 fileInput.addEventListener("change", loadFile);
 uploadBox.addEventListener("click", () => fileInput.click());
