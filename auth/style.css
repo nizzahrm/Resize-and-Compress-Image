@@ -10,14 +10,14 @@ body{
 }
 .container{
     background:#fff;
-    width: 450px;
+    width:450px;
     padding:1.5rem;
-    margin: 50px auto;
+    margin:50px auto;
     border-radius:10px;
-    box-shadow:0 20px 35px rgba(0,0,1,0,9);
+    box-shadow:0 20px 35px rgba(0,0,1,0.9);
 }
 form{
-    margin:0 2rem ;
+    margin:0 2rem;
 }
 .form-title{
     font-size:1.5rem;
@@ -26,7 +26,7 @@ form{
     padding:1.3rem;
     margin-bottom:0.4rem;
 }
-.input{
+input{
     color:inherit;
     width:100%;
     background-color:transparent;
@@ -38,14 +38,14 @@ form{
 .input-group{
     padding:1% 0;
     position:relative;
-      
+
 }
 .input-group i{
     position:absolute;
     color:black;
 }
-.input:focus{
-    background-color:transparent;
+input:focus{
+    background-color: transparent;
     outline:transparent;
     border-bottom:2px solid hsl(327,90%,28%);
 }
@@ -53,7 +53,7 @@ input::placeholder{
     color:transparent;
 }
 label{
-    color: #757575;
+    color:#757575;
     position:relative;
     left:1.2em;
     top:-1.3em;
@@ -69,6 +69,7 @@ input:focus~label,input:not(:placeholder-shown)~label{
     text-align:right;
     font-size:1rem;
     margin-bottom:1rem;
+
 }
 .recover a{
     text-decoration:none;
@@ -91,12 +92,30 @@ input:focus~label,input:not(:placeholder-shown)~label{
     transition:0.9s;
 }
 .btn:hover{
-    background: #07001f;
+    background:#07001f;
 }
 .or{
     font-size:1.1rem;
     margin-top:0.5rem;
     text-align:center;
+}
+.icons{
+    text-align:center;
+}
+.icons i{
+    color:rgb(125,125,235);
+    padding:0.8rem 1.5rem;
+    border-radius:10px;
+    font-size:1.5rem;
+    cursor:pointer;
+    border:2px solid #dfe9f5;
+    margin:0 15px;
+    transition:1s;
+}
+.icons i:hover{
+    background:#07001f;
+    font-size:1.6rem;
+    border:2px solid rgb(125,125,235);
 }
 .links{
     display:flex;
